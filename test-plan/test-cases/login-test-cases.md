@@ -4,11 +4,13 @@
 
 ### Preconditions
 
-User has a registered account.
+- User is registered
+- User is on the Login page
 
 ### Test Data
 
-Valid username and valid password.
+- Email: user@test.com
+- Password: Password123
 
 ### Steps
 
@@ -35,18 +37,18 @@ Positive
 
 ### Preconditions
 
-User has a registered account.
+User is registered and is on the Login page.
 
 ### Test Data
 
-Valid username and invalid password.
+- Email: user@test.com
+- Password: InvalidPassword123
 
 ### Steps
 
-1. Open the Login page.
-2. Enter a valid username.
-3. Enter an invalid password.
-4. Click the Login button.
+1. Enter a valid email address.
+2. Enter an invalid password.
+3. Click the Login button.
 
 ### Expected Result
 
@@ -62,18 +64,26 @@ Negative
 
 ---
 
-## TC-003 — Login with empty username
+## TC-003 — Login with empty email
+
+### Preconditions
+
+User is registered and is on the Login page.
+
+### Test Data
+
+- Email: Empty
+- Password: Password123
 
 ### Steps
 
-1. Open the Login page.
-2. Leave the username field empty.
-3. Enter a valid password.
-4. Click the Login button.
+1. Leave the email field empty.
+2. Enter a valid password.
+3. Click the Login button.
 
 ### Expected Result
 
-Validation message is displayed for the username field.
+A validation message is displayed for the email field, and the user is not logged in.
 
 ### Priority
 
