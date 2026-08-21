@@ -92,3 +92,34 @@ High
 ### Type
 
 Negative
+
+---
+
+## TC-004 — Login with empty password
+
+### Preconditions
+
+User is registered and is on the Login page.
+
+### Test Data
+
+- Email: user@test.com
+- Password: Empty
+
+### Steps
+
+1. Enter a valid email address.
+2. Leave the password field empty.
+3. Click the Login button.
+
+### Expected Result
+
+A validation message is displayed for the password field, and the user is not logged in.
+
+### Priority
+
+High
+
+### Type
+
+Negative
