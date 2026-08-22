@@ -5,6 +5,13 @@
 **Application:** SauceDemo  
 **URL:** https://www.saucedemo.com/
 
+## Test Environment
+
+- Platform: Web
+- Browser: Chrome
+- Test Type: Functional
+- Test Level: UI
+
 ---
 
 ## TC-001 — Successful login with valid credentials
@@ -27,7 +34,7 @@
 
 ### Expected Result
 
-User is successfully logged in and redirected to the Products page.
+User is successfully authenticated and redirected to the Products page.
 
 ### Priority
 
@@ -37,9 +44,13 @@ High
 
 Positive
 
+### Status
+
+Not Executed
+
 ---
 
-## TC-002 — Login with invalid password
+## TC-002 — Login with valid username and invalid password
 
 ### Preconditions
 
@@ -54,12 +65,12 @@ Positive
 ### Steps
 
 1. Enter `standard_user` in the Username field.
-2. Enter an invalid password.
+2. Enter `InvalidPassword123` in the Password field.
 3. Click the Login button.
 
 ### Expected Result
 
-Login is rejected and an error message is displayed. The user remains on the Login page.
+Login is rejected and an appropriate error message is displayed. User remains on the Login page.
 
 ### Priority
 
@@ -68,6 +79,10 @@ High
 ### Type
 
 Negative
+
+### Status
+
+Not Executed
 
 ---
 
@@ -91,7 +106,7 @@ Negative
 
 ### Expected Result
 
-Login is rejected and a validation error is displayed for the Username field.
+Login is rejected and a validation message is displayed indicating that the Username field is required.
 
 ### Priority
 
@@ -100,6 +115,10 @@ High
 ### Type
 
 Negative
+
+### Status
+
+Not Executed
 
 ---
 
@@ -123,7 +142,7 @@ Negative
 
 ### Expected Result
 
-Login is rejected and a validation error is displayed for the Password field.
+Login is rejected and a validation message is displayed indicating that the Password field is required.
 
 ### Priority
 
@@ -133,9 +152,13 @@ High
 
 Negative
 
+### Status
+
+Not Executed
+
 ---
 
-## TC-005 — Login with invalid username
+## TC-005 — Login with unregistered username
 
 ### Preconditions
 
@@ -155,7 +178,7 @@ Negative
 
 ### Expected Result
 
-Login is rejected and an error message is displayed.
+Login is rejected and an appropriate authentication error message is displayed.
 
 ### Priority
 
@@ -165,9 +188,13 @@ High
 
 Negative
 
+### Status
+
+Not Executed
+
 ---
 
-## TC-006 — Login with invalid username and invalid password
+## TC-006 — Login with unregistered username and invalid password
 
 ### Preconditions
 
@@ -187,7 +214,7 @@ Negative
 
 ### Expected Result
 
-Login is rejected and an error message is displayed.
+Login is rejected and an appropriate authentication error message is displayed.
 
 ### Priority
 
@@ -197,15 +224,27 @@ High
 
 Negative
 
+### Status
+
+Not Executed
+
 ---
 
 ## Test Coverage
 
 The login test suite covers:
 
-- Successful login
-- Invalid username
+- Successful authentication
 - Invalid password
-- Invalid username and password
 - Empty username
 - Empty password
+- Unregistered username
+- Unregistered username with invalid password
+
+### Test Design Techniques
+
+The following techniques are applied:
+
+- Equivalence Partitioning
+- Negative Testing
+- Decision Table Testing
