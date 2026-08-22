@@ -123,3 +123,37 @@ High
 ### Type
 
 Negative
+
+---
+
+## TC-005 — Login with invalid email
+
+### Preconditions
+
+User is registered and is on the Login page.
+
+### Test Data
+
+* Email: invalid-email
+* Password: Password123
+
+### Steps
+
+1. Enter an invalid email address.
+2. Enter a valid password.
+3. Click the Login button.
+
+### Expected Result
+
+A validation message is displayed for the email field, and the user is not logged in.
+
+### Priority
+
+High
+
+### Type
+
+Negative
+
+---
+
