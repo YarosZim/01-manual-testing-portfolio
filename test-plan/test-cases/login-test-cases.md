@@ -1,27 +1,33 @@
-# Login Test Cases
+# Login Test Cases — SauceDemo
 
-## TC-001 — Login with valid credentials
+## Application Under Test
+
+**Application:** SauceDemo  
+**URL:** https://www.saucedemo.com/
+
+---
+
+## TC-001 — Successful login with valid credentials
 
 ### Preconditions
 
-- User is registered
-- User is on the Login page
+- SauceDemo application is available.
+- User is on the Login page.
 
 ### Test Data
 
-- Email: user@test.com
-- Password: Password123
+- Username: `standard_user`
+- Password: `secret_sauce`
 
 ### Steps
 
-1. Open the Login page.
-2. Enter a valid username.
-3. Enter a valid password.
-4. Click the Login button.
+1. Enter `standard_user` in the Username field.
+2. Enter `secret_sauce` in the Password field.
+3. Click the Login button.
 
 ### Expected Result
 
-User is successfully logged in.
+User is successfully logged in and redirected to the Products page.
 
 ### Priority
 
@@ -37,22 +43,23 @@ Positive
 
 ### Preconditions
 
-User is registered and is on the Login page.
+- SauceDemo application is available.
+- User is on the Login page.
 
 ### Test Data
 
-- Email: user@test.com
-- Password: InvalidPassword123
+- Username: `standard_user`
+- Password: `InvalidPassword123`
 
 ### Steps
 
-1. Enter a valid email address.
+1. Enter `standard_user` in the Username field.
 2. Enter an invalid password.
 3. Click the Login button.
 
 ### Expected Result
 
-The user remains on the Login page and an appropriate error message is displayed.
+Login is rejected and an error message is displayed. The user remains on the Login page.
 
 ### Priority
 
@@ -64,26 +71,27 @@ Negative
 
 ---
 
-## TC-003 — Login with empty email
+## TC-003 — Login with empty username
 
 ### Preconditions
 
-User is registered and is on the Login page.
+- SauceDemo application is available.
+- User is on the Login page.
 
 ### Test Data
 
-- Email: Empty
-- Password: Password123
+- Username: Empty
+- Password: `secret_sauce`
 
 ### Steps
 
-1. Leave the email field empty.
-2. Enter a valid password.
+1. Leave the Username field empty.
+2. Enter `secret_sauce` in the Password field.
 3. Click the Login button.
 
 ### Expected Result
 
-A validation message is displayed for the email field, and the user is not logged in.
+Login is rejected and a validation error is displayed for the Username field.
 
 ### Priority
 
@@ -99,22 +107,23 @@ Negative
 
 ### Preconditions
 
-User is registered and is on the Login page.
+- SauceDemo application is available.
+- User is on the Login page.
 
 ### Test Data
 
-- Email: user@test.com
+- Username: `standard_user`
 - Password: Empty
 
 ### Steps
 
-1. Enter a valid email address.
-2. Leave the password field empty.
+1. Enter `standard_user` in the Username field.
+2. Leave the Password field empty.
 3. Click the Login button.
 
 ### Expected Result
 
-A validation message is displayed for the password field, and the user is not logged in.
+Login is rejected and a validation error is displayed for the Password field.
 
 ### Priority
 
@@ -126,26 +135,27 @@ Negative
 
 ---
 
-## TC-005 — Login with invalid email
+## TC-005 — Login with invalid username
 
 ### Preconditions
 
-User is registered and is on the Login page.
+- SauceDemo application is available.
+- User is on the Login page.
 
 ### Test Data
 
-* Email: invalid-email
-* Password: Password123
+- Username: `invalid_user`
+- Password: `secret_sauce`
 
 ### Steps
 
-1. Enter an invalid email address.
-2. Enter a valid password.
+1. Enter `invalid_user` in the Username field.
+2. Enter `secret_sauce` in the Password field.
 3. Click the Login button.
 
 ### Expected Result
 
-A validation message is displayed for the email field, and the user is not logged in.
+Login is rejected and an error message is displayed.
 
 ### Priority
 
@@ -157,3 +167,45 @@ Negative
 
 ---
 
+## TC-006 — Login with invalid username and invalid password
+
+### Preconditions
+
+- SauceDemo application is available.
+- User is on the Login page.
+
+### Test Data
+
+- Username: `invalid_user`
+- Password: `InvalidPassword123`
+
+### Steps
+
+1. Enter `invalid_user` in the Username field.
+2. Enter `InvalidPassword123` in the Password field.
+3. Click the Login button.
+
+### Expected Result
+
+Login is rejected and an error message is displayed.
+
+### Priority
+
+High
+
+### Type
+
+Negative
+
+---
+
+## Test Coverage
+
+The login test suite covers:
+
+- Successful login
+- Invalid username
+- Invalid password
+- Invalid username and password
+- Empty username
+- Empty password
